@@ -14,6 +14,8 @@ public class Data : MonoBehaviour
         {
             levelDatas.Add(new LevelData(i+1));
         }
+
+
     }
 
     // Update is called once per frame

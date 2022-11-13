@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F675436A-BBE9-0D08-1384-11F061646E84}</ProjectGuid>
+    <ProjectGuid>{B65AD9C5-EF8F-3020-C66F-FC86A680C140}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -59,9 +59,11 @@
     <Compile Include="Assets\Scripts\ScoreGraphics.cs" />
     <Compile Include="Assets\Scripts\LevelData.cs" />
     <Compile Include="Assets\Scripts\ScreenText.cs" />
+    <Compile Include="Assets\Scripts\Adventurer.cs" />
     <Compile Include="Assets\Scripts\MenuButtons.cs" />
     <Compile Include="Assets\Scripts\Data.cs" />
     <Compile Include="Assets\Scripts\Splash.cs" />
+    <Compile Include="Assets\Scripts\Healer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
