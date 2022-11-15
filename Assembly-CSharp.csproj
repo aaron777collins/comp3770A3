@@ -64,6 +64,15 @@
     <Compile Include="Assets\Scripts\Data.cs" />
     <Compile Include="Assets\Scripts\Splash.cs" />
     <Compile Include="Assets\Scripts\Healer.cs" />
+    <Compile Include="Assets\Scripts\Druid.cs" />
+    <Compile Include="Assets\Scripts\Mage.cs" />
+    <Compile Include="Assets\Scripts\Rogue.cs" />
+    <Compile Include="Assets\Scripts\Warrior.cs" />
+    <Compile Include="Assets\Scripts\Boss.cs" />
+    <Compile Include="Assets\Scripts\EntityManager.cs" />
+    <Compile Include="Assets\Scripts\LevelGraphics.cs" />
+    <Compile Include="Assets\Scripts\EntityManagerAddon.cs" />
+    <Compile Include="Assets\Scripts\EntityManagerAddonL1.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

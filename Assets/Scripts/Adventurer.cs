@@ -4,12 +4,23 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public abstract class Adventurer 
+public abstract class Adventurer
 {
     private float minDamage;
     private float maxDamage;
     private float health;
+    private float initialHealth;
+    private bool alive;
     
+    public Adventurer(float minDamage, float maxDamage, float health)
+    {
+        this.minDamage = minDamage;
+        this.maxDamage = maxDamage;
+        this.health = health;
+        this.initialHealth = health;
+        this.alive = true;
+    }
+
     public float getDamageCalc()
     {
         return Random.Range(minDamage, maxDamage);
@@ -20,7 +31,12 @@ public abstract class Adventurer
         return health;
     }
 
-    public void removeHealth(float x) { 
+    public float getInitialHealth()
+    {
+        return initialHealth;
+    }
+
+    public virtual void removeHealth(float x) { 
         health -= x;
         if (health <= 0f)
         {
@@ -29,18 +45,26 @@ public abstract class Adventurer
         }
     }
 
+    public void heal(float x)
+    {
+        health += x;
+        if (health > initialHealth)
+        {
+            health = initialHealth;
+        }
+    }
+
+    public bool isAlive()
+    {
+        return alive;
+    }
+
     public void die()
     {
-        // TODO: Implement
+        alive = false;
     }
 
 
     public abstract void useAbility();
 
-    public Adventurer(float minDamage, float maxDamage, float health)
-    {
-        this.minDamage = minDamage;
-        this.maxDamage = maxDamage;
-        this.health = health;
-    }
 }

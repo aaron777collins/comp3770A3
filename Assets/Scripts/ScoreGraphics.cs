@@ -28,8 +28,8 @@ public class ScoreGraphics : MonoBehaviour
         for (int i = 0; i < data.numLevels; i++)
         {
             ScreenText levelTxt = new ScreenText("Level " + data.levelDatas[i].level, Screen.width / 6, Screen.height / 3 + (24 * i), 0, 20, Color.black, canvasGO);
-            ScreenText onBossVal = new ScreenText(data.levelDatas[i].maxDamageFromPlayerToBoss.ToString(), Screen.width / 3, Screen.height / 3 + (24 * i), 0, 20, Color.black, canvasGO);
-            ScreenText onPlayerVal = new ScreenText(data.levelDatas[i].maxDamageFromBossToPlayer.ToString(), Screen.width / 3*2, Screen.height / 3 + (24 * i), 0, 20, Color.black, canvasGO);
+            ScreenText onBossVal = new ScreenText(data.levelDatas[i].maxDamageFromPlayersToBoss.ToString(), Screen.width / 3, Screen.height / 3 + (24 * i), 0, 20, Color.black, canvasGO);
+            ScreenText onPlayerVal = new ScreenText(data.levelDatas[i].maxDamageFromBossToPlayers.ToString(), Screen.width / 3*2, Screen.height / 3 + (24 * i), 0, 20, Color.black, canvasGO);
         }    
     
     }

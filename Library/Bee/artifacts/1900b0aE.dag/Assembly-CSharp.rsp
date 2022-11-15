@@ -356,13 +356,22 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/Adventurer.cs"
+"Assets/Scripts/Boss.cs"
 "Assets/Scripts/Data.cs"
+"Assets/Scripts/Druid.cs"
+"Assets/Scripts/EntityManager.cs"
+"Assets/Scripts/EntityManagerAddon.cs"
+"Assets/Scripts/EntityManagerAddonL1.cs"
 "Assets/Scripts/Healer.cs"
 "Assets/Scripts/LevelData.cs"
+"Assets/Scripts/LevelGraphics.cs"
+"Assets/Scripts/Mage.cs"
 "Assets/Scripts/MenuButtons.cs"
+"Assets/Scripts/Rogue.cs"
 "Assets/Scripts/ScoreGraphics.cs"
 "Assets/Scripts/ScreenText.cs"
 "Assets/Scripts/Splash.cs"
+"Assets/Scripts/Warrior.cs"
 -langversion:9.0
 
 /deterministic
