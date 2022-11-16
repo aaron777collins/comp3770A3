@@ -56,10 +56,13 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\EntityManagerAddonL2.cs" />
     <Compile Include="Assets\Scripts\ScoreGraphics.cs" />
     <Compile Include="Assets\Scripts\Druid.cs" />
+    <Compile Include="Assets\Scripts\EntityManagerAddonL3.cs" />
     <Compile Include="Assets\Scripts\LevelData.cs" />
     <Compile Include="Assets\Scripts\ScreenText.cs" />
+    <Compile Include="Assets\Scripts\CSVWriter.cs" />
     <Compile Include="Assets\Scripts\Adventurer.cs" />
     <Compile Include="Assets\Scripts\EntityManagerAddon.cs" />
     <Compile Include="Assets\Scripts\EntityManager.cs" />
@@ -73,9 +76,6 @@
     <Compile Include="Assets\Scripts\Warrior.cs" />
     <Compile Include="Assets\Scripts\Mage.cs" />
     <Compile Include="Assets\Scripts\LevelGraphics.cs" />
-    <Compile Include="Assets\Scripts\EntityManagerAddonL2.cs" />
-    <Compile Include="Assets\Scripts\EntityManagerAddonL3.cs" />
-    <Compile Include="Assets\Scripts\CSVWriter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
