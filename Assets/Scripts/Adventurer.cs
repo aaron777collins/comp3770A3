@@ -11,6 +11,17 @@ public abstract class Adventurer
     private float health;
     private float initialHealth;
     private bool alive;
+    private float totalDamage;
+    
+    public float getTotalDamage()
+    {
+        return totalDamage;
+    }
+
+    public void addDamageToTotal(float x)
+    {
+        totalDamage += x;
+    }
     
     public Adventurer(float minDamage, float maxDamage, float health)
     {
@@ -19,6 +30,7 @@ public abstract class Adventurer
         this.health = health;
         this.initialHealth = health;
         this.alive = true;
+        this.totalDamage = 0;
     }
 
     public float getDamageCalc()

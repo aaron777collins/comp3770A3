@@ -23,7 +23,13 @@ public class EntityManager : MonoBehaviour
     public Druid druid;
     public Healer priest;
 
+    public static CSVWriter writer;
+
     bool simulationRunning = true;
+
+    int timeStep = 1;
+
+    public float totalDamageDoneToBoss;
 
     public bool isSimulationRunning()
     {
@@ -39,7 +45,7 @@ public class EntityManager : MonoBehaviour
 
         levelSpecificEntityManagerAddon = levelSpecificEntityManagerAddonObj.GetComponent<EntityManagerAddon>();
 
-        levelSpecificEntityManagerAddon.StartCust();
+        writer = new CSVWriter("levels", "level" + (SceneManager.GetActiveScene().buildIndex - 2) + ".csv");
 
         simulationRunning = true;
 
@@ -62,6 +68,9 @@ public class EntityManager : MonoBehaviour
         adventurers.Add(druid);
         adventurers.Add(priest);
 
+        levelSpecificEntityManagerAddon.StartCust();
+
+        writer.writeLn("Time-step, Boss, Warrior, Rogue, Mage, Druid, Priest");
     }
 
     // Update is called once per frame
@@ -70,11 +79,8 @@ public class EntityManager : MonoBehaviour
         if (simulationRunning)
         {
 
-            float bossHealth = boss.getHealth();
 
-            levelSpecificEntityManagerAddon.UpdateCust();
-
-            foreach(Adventurer adventurer in damageDealers)
+            foreach(Adventurer adventurer in adventurers)
             {
                 adventurer.useAbility();
             }
@@ -92,14 +98,21 @@ public class EntityManager : MonoBehaviour
                 simulationRunning=false;
             }
 
-            float newBossHealth = boss.getHealth();
+            totalDamageDoneToBoss = 0;
 
-            float diffBossHealth = bossHealth - newBossHealth;
 
-            if (diffBossHealth > levelData.maxDamageFromPlayersToBoss)
+            foreach (Adventurer adventurer in adventurers)
             {
-                levelData.maxDamageFromPlayersToBoss = diffBossHealth;
+                totalDamageDoneToBoss += adventurer.getTotalDamage();
             }
+            if (totalDamageDoneToBoss > levelData.maxDamageFromPlayersToBoss)
+            {
+                levelData.maxDamageFromPlayersToBoss = totalDamageDoneToBoss;
+            }
+
+            levelSpecificEntityManagerAddon.UpdateCust();
+
+            writer.writeLn(timeStep++ + ", " + boss.getHealth() + ", " + warrior.getHealth() + ", " + rogue.getHealth() + ", " + mage.getHealth() + ", " + druid.getHealth() + ", " + priest.getHealth());
         }
     }
 }

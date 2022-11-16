@@ -46,7 +46,19 @@ public class Healer : Adventurer
 
     public void smallHeal()
     {
+        if (mana - 5 <= 0f)
+        {
+            return;
+        }
 
+        smallHealNoCost();
+
+        // then decrease 5 mana
+        mana -= 5;
+    }
+
+    public void smallHealNoCost()
+    {
         float rand = Random.Range(1, 3);
         if (rand <=2)
         {
@@ -60,18 +72,25 @@ public class Healer : Adventurer
             damageDealers.ElementAt(dealerIndex).heal(15);
         }
 
-        // then decrease 5 mana
-        mana -= 5;
     }
 
     public void bigHeal()
     {
+        if (mana - 10 <= 0f)
+        {
+            return;
+        }
 
-        // Heal tank
-        warrior.heal(25);
+        bigHealNoCost();
 
         // then decrease 10 mana
         mana -= 10;
+    }
+
+    public void bigHealNoCost()
+    {
+        // Heal tank
+        warrior.heal(25);
     }
 
     public override void useAbility()

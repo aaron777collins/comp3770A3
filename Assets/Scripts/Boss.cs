@@ -48,9 +48,11 @@ public class Boss : Adventurer
         totalDamageToParty += dmg;
         warrior.removeHealth(dmg);
 
-        if (totalDamageToParty > levelData.maxDamageFromBossToPlayers)
+        addDamageToTotal(totalDamageToParty);
+
+        if (getTotalDamage() > levelData.maxDamageFromBossToPlayers)
         {
-            levelData.maxDamageFromBossToPlayers = (float)totalDamageToParty;
+            levelData.maxDamageFromBossToPlayers = (float)getTotalDamage();
         }
     }
 }

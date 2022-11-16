@@ -22,8 +22,8 @@ public class ScoreGraphics : MonoBehaviour
         ScreenText Score = new ScreenText("Scores", Screen.width/2, Screen.height/15, 0, 30, Color.black, canvasGO);
     
         ScreenText totalDamage = new ScreenText("Max Damage", Screen.width / 2, Screen.height / 7, 0, 24, Color.black, canvasGO);
-        ScreenText onBoss = new ScreenText("On Boss From Player", Screen.width / 3, Screen.height / 4, 0, 20, Color.black, canvasGO);
-        ScreenText onPlayer = new ScreenText("On Player From Boss", Screen.width / 3 * 2, Screen.height / 4, 0, 20, Color.black, canvasGO);
+        ScreenText onBoss = new ScreenText("On Boss From Players", Screen.width / 3, Screen.height / 4, 0, 20, Color.black, canvasGO);
+        ScreenText onPlayer = new ScreenText("On Players From Boss", Screen.width / 3 * 2, Screen.height / 4, 0, 20, Color.black, canvasGO);
 
         for (int i = 0; i < data.numLevels; i++)
         {

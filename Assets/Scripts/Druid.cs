@@ -22,6 +22,8 @@ public class Druid : Adventurer
 
     public override void useAbility()
     {
-        boss.removeHealth(this.getDamageCalc());
+        float damage = this.getDamageCalc();
+        this.addDamageToTotal(damage);
+        boss.removeHealth(damage);
     }
 }
